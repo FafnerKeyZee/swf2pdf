@@ -22,7 +22,7 @@ for word in words :
 	p.wait()
 	listfile.append("tmp_"+word+".pdf")
 
-p=subprocess.Popen("pdfunite "+" ".join(listfile)+" "+sys.argv[1]+".pdf", shell=True)
+p=subprocess.Popen("pdfunite "+" ".join(listfile)+" "+sys.argv[1].split('.')[0]+".pdf", shell=True)
 p.wait()
 p=subprocess.Popen("rm "+" ".join(listfile), shell=True)
 p.wait
